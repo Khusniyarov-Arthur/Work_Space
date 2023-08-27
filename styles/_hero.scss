@@ -1,0 +1,31 @@
+.hero {
+  position: relative;
+  padding: 57px 0;
+
+  &__container::after {
+    content: "";
+    position: absolute;
+    width: 421px;
+    height: 330px;
+    background: url("../img/laptop.png") no-repeat center/contain;
+    top: 0;
+    right: -40px;
+  }
+
+  &__title {
+    font-size: 90px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+  }
+
+  &__blue-text {
+    color: #2a18ff;
+    font-size: 90px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,16 @@
+.header {
+  padding: 40px 0 100px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__link {
+    padding: 12px 32px;
+    border-radius: 8px;
+    background: #a6adff;
+    font-size: 20px;
+  }
+}

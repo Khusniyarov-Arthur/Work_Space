@@ -1,0 +1,35 @@
+.choices[data-type*="select-one"] .choices__inner {
+  padding-bottom: 6px;
+}
+
+.choices {
+  width: 100%;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    background: #fff;
+    padding: 6px 16px;
+    border: none;
+    min-height: 32px;
+  }
+
+  &__item {
+    display: flex;
+    align-self: center;
+    font-family: Inter;
+    font-style: normal;
+  }
+
+  &__list--single {
+    padding: 0;
+  }
+
+  &__[data-type*="select-one"]::after {
+    width: 20px;
+    height: 20px;
+    background: url("../img/arrow.svg") no-repeat center;
+    border: none;
+  }
+}

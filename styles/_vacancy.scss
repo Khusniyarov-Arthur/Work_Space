@@ -1,0 +1,35 @@
+.vacancy {
+  cursor: pointer;
+
+  &__img {
+    display: block;
+    height: 44px;
+  }
+
+  &__company {
+    padding: 12px 0 8px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  &__title {
+    display: inline-block;
+    padding: 3px 5px;
+    border-radius: 4px;
+    background: #eaecff;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__fields {
+    padding-top: 8px;
+  }
+
+  &__field {
+    color: #ccc;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+  }
+}
