@@ -11,3 +11,29 @@
     padding: 16px;
   }
 }
+
+@media (max-width: 879px) {
+  .cards {
+    &__list {
+      grid-template-columns: repeat(3, minmax(208px, 1fr));
+      gap: 10px;
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .cards {
+    &__list {
+      grid-template-columns: repeat(2, minmax(208px, 1fr));
+    }
+  }
+}
+
+@media (max-width: 605px) {
+  .cards {
+    &__list {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

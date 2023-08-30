@@ -35,3 +35,15 @@
     color: brown;
   }
 }
+
+@media (max-width: 1150px) {
+  .footer {
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 880px) {
+  .footer {
+    padding-bottom: 24px;
+  }
+}

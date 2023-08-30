@@ -70,3 +70,53 @@
     background: #a6adff;
   }
 }
+
+@media (max-width: 879px) {
+  .filter {
+    &__title {
+      display: none;
+    }
+
+    &__visible {
+      display: none;
+    }
+
+    &__range {
+      justify-content: start;
+    }
+
+    &__checkboxes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
+      gap: 10px;
+      padding-bottom: 20px;
+    }
+
+    &__buttons {
+      position: relative;
+    }
+
+    &__btn-clear {
+      top: 0;
+      left: 130px;
+      padding: 7px 0 7px 16px;
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .filter {
+    &__checkboxes {
+      grid-template-columns: repeat(3, minmax(130px, 1fr));
+    }
+  }
+}
+
+@media (max-width: 605px) {
+  .filter {
+    &__checkboxes {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
