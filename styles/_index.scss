@@ -26,6 +26,11 @@ body {
   background-color: #f3f4f8;
   line-height: 1.2;
 }
+
+.scroll-hidden {
+  overflow: hidden;
+}
+
 img,
 svg {
   max-width: 100%;

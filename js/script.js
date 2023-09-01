@@ -7,6 +7,11 @@ const pagination = {};
 const cardsList = document.querySelector(".cards__list");
 const filterBtn = document.querySelector(".vacancies__filter-btn");
 const filter = document.querySelector(".filter");
+const body = document.querySelector("body");
+
+const toggleClassBody = () => {
+  body.classList.toggle("scroll-hidden");
+};
 
 const toogleFilter = () => {
   if (filterBtn.classList.contains("vacancies__filter-btn-active")) {
@@ -188,14 +193,16 @@ const renderModal = (data) => {
   modal.addEventListener("click", (e) => {
     if (e.target === modal || e.target.closest(".modal__close")) {
       modal.remove();
+      toggleClassBody();
     }
   });
 
   sendTelegram(modal);
 };
 
-const openModal = (id) => {
+const openModal = (id, addClassBody) => {
   getData(`${API_URL}${VACANCY_URL}/${id}`, renderModal, renderError);
+  toggleClassBody();
 };
 
 const observer = new IntersectionObserver(

@@ -26,6 +26,10 @@ body {
   line-height: 1.2;
 }
 
+.scroll-hidden {
+  overflow: hidden;
+}
+
 img,
 svg {
   max-width: 100%;
@@ -728,4 +732,11 @@ fieldset {
   top: 50%;
   left: 50%;
   cursor: default;
+}
+
+@media (max-width: 605px) {
+  .modal__main {
+    overflow: scroll;
+    max-height: 100vh;
+  }
 }/*# sourceMappingURL=styles.css.map */
