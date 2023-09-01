@@ -570,39 +570,6 @@ fieldset {
     padding-bottom: 24px;
   }
 }
-.modal {
-  position: absolute;
-  z-index: 10;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  overflow-y: auto;
-  padding: 30px;
-  display: flex;
-}
-.modal__close {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 0;
-  line-height: 0;
-  outline: 1px solid transparent;
-  border-radius: 3px;
-}
-.modal__close:focus-visible {
-  outline-color: gray;
-}
-.modal__main {
-  position: fixed;
-  transform: translateX(-50%) translateY(-50%);
-  top: 50%;
-  left: 50%;
-  cursor: default;
-}
-
 .detail {
   width: 780px;
   border-radius: 16px;
@@ -666,6 +633,37 @@ fieldset {
 .detail__link {
   color: #2a18ff;
 }
+.detail__tg {
+  position: relative;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.detail__input {
+  width: 180px;
+  font-size: 14px;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 16px;
+  border: 1px solid #cccccc;
+}
+.detail__btn {
+  border-radius: 16px;
+  background-color: #3390ec;
+  padding: 4px 16px;
+  color: #ffffff;
+}
+.detail__alert {
+  display: none;
+  align-self: center;
+  padding-left: 10px;
+}
+.detail__alert-visible {
+  display: block;
+  align-self: center;
+  padding-left: 10px;
+}
 
 @media (max-width: 879px) {
   .detail {
@@ -698,4 +696,36 @@ fieldset {
   .detail__fields {
     padding-bottom: 27px;
   }
+}
+.modal {
+  position: absolute;
+  z-index: 10;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  overflow-y: auto;
+  padding: 30px;
+  display: flex;
+}
+.modal__close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 12px;
+  padding: 0;
+  line-height: 0;
+  outline: 1px solid transparent;
+  border-radius: 3px;
+}
+.modal__close:focus-visible {
+  outline-color: gray;
+}
+.modal__main {
+  position: fixed;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+  cursor: default;
 }/*# sourceMappingURL=styles.css.map */

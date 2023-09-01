@@ -1,6 +1,7 @@
 const API_URL = "https://workspace-methed.vercel.app/";
 const LOCATION_URL = "api/locations";
 const VACANCY_URL = "api/vacancy";
+const BOT_TOKEN = "6401102274:AAFWqzGRlbilElkOXg3HER7Ev76x8_HB974";
 let lastUrl = "";
 const pagination = {};
 const cardsList = document.querySelector(".cards__list");
@@ -126,14 +127,36 @@ const createDetailVacancy = (data) => `
       </ul>
     </div>
 
-    <p class="detail__resume">
-      Отправить резюме на
-      <a href="mailto:${data.email}" class="detail__link"
-        >${data.email}</a
-      >
-    </p>
-  </article>
-`;
+    ${`<form class="detail__tg">
+              <input class="detail__input" type="text" name="message" placeholder="Введите свой Email"></input>
+              <input name='vacancyId' value="${data.company}" type="hidden">
+              <button class="detail__btn">Отправить заявку</button>
+              <span class="detail__alert">Заявка отправлена</span>
+            </form>`}
+  </article>`;
+
+const sendTelegram = (modal) => {
+  modal.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const form = e.target.closest(".detail__tg");
+    const userId = "450452043";
+    const text = `Отклик на вакансию ${form.vacancyId.value}, email: ${form.message.value}`;
+    const urlBot = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${userId}&text=${text}&`;
+
+    const alertMassege = () => {
+      const detailAlert = document.querySelector(".detail__alert");
+      detailAlert.classList.add("detail__alert-visible");
+      setTimeout(() => {
+        modal.remove();
+      }, 1000);
+    };
+
+    fetch(urlBot)
+      .then((res) => res)
+      .catch((err) => console.log(err))
+      .finaly(alertMassege());
+  });
+};
 
 const renderModal = (data) => {
   const modal = document.createElement("div");
@@ -167,6 +190,8 @@ const renderModal = (data) => {
       modal.remove();
     }
   });
+
+  sendTelegram(modal);
 };
 
 const openModal = (id) => {
@@ -190,6 +215,7 @@ const init = () => {
   const citySelect = document.querySelector("#city");
   const cityChoices = new Choices(citySelect, {
     itemSelectText: "",
+    searchEnabled: false,
   });
 
   getData(

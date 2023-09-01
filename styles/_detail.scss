@@ -71,6 +71,41 @@
   &__link {
     color: #2a18ff;
   }
+
+  &__tg {
+    position: relative;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  &__input {
+    width: 180px;
+    font-size: 14px;
+    height: 32px;
+    padding: 0 16px;
+    border-radius: 16px;
+    border: 1px solid #cccccc;
+  }
+  &__btn {
+    border-radius: 16px;
+    background-color: #3390ec;
+    padding: 4px 16px;
+    color: #ffffff;
+  }
+
+  &__alert {
+    display: none;
+    align-self: center;
+    padding-left: 10px;
+  }
+
+  &__alert-visible {
+    display: block;
+    align-self: center;
+    padding-left: 10px;
+  }
 }
 
 @media (max-width: 879px) {
